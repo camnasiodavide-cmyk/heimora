@@ -84,7 +84,7 @@ async function cloudCheck(){
 document.getElementById("cloudLoginForm").addEventListener("submit",async event=>{
  event.preventDefault();const form=event.currentTarget,button=form.querySelector('button[type="submit"]');button.disabled=true;cloudMessage("Accesso in corso…");
  try{
-  await cloudRequest("/account/sessions/email","POST",{email:form.elements.email.value.trim(),password:form.elements.password.value});
+  const user=await cloudLogin(form.elements.email.value.trim(),form.elements.password.value);
   try{
    form.elements.password.value="";
    cloudControls(true,user);authLock(false);autoSyncStart(user);
