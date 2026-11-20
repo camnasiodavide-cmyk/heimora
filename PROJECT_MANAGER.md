@@ -155,3 +155,10 @@ Un unico comando **Carica documento**: l’app riconosce automaticamente fattura
 - L'utente conferma che «Esporta backup JSON» è già stato provato e funziona. Non confondere export verificato con ripristino completo collaudato.
 - Fastweb Gas validato su fattura ottobre 2026; Fastweb Luce attende primo PDF reale. Evitare nuovi sviluppi non necessari: priorità stabilità e manutenzione.
 - Restano come miglioramenti separati, non bloccanti: eventuale collaudo del ripristino in ambiente isolato e migrazione prudente degli importi finanziari 2027 dal codice pubblico a configurazione privata. Nessuna modifica ai movimenti o alla logica delle rate in questa ricognizione.
+
+## 2026-11-20 — Affidabilità del cloud e avvio PWA
+
+- Versione 2026.11.20.2. La coda conserva anche i movimenti non ancora tentati quando Appwrite limita le richieste o la connessione cade. I tentativi si diradano durante le interruzioni.
+- La PWA conserva in cache solo i file pubblici necessari per aprire la schermata di accesso anche senza rete. L'accesso ai dati richiede una sessione verificata; le risposte di Appwrite non entrano nella cache del service worker.
+- L'avviso di sospensione guida alla riattivazione dalla Console Appwrite. Il piano Free può sospendere il progetto dopo 7 giorni senza attività di sviluppo. Per eliminare questa causa di interruzione serve un piano Appwrite Cloud senza sospensione per inattività oppure un'istanza Appwrite gestita su un server sempre acceso.
+- Verifiche locali con risposte simulate: riuso della sessione, recupero da sessione già attiva, coda dopo HTTP 429 e avvio offline della schermata di accesso. Resta il collaudo su iPhone con l'archivio reale.
