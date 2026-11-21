@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#075e56"><meta name="heimora-version" content="2026.11.20.2"><title>HEIMORA · Le spese di casa</title><link rel="icon" type="image/svg+xml" href="./heimora-icon.svg"><link rel="apple-touch-icon" sizes="180x180" href="./heimora-touch-icon.png?v=2"><link rel="manifest" href="./manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="HEIMORA">
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#075e56"><meta name="heimora-version" content="2026.11.21.1-firebase-preview"><title>HEIMORA · Le spese di casa</title><link rel="icon" type="image/svg+xml" href="./heimora-icon.svg"><link rel="apple-touch-icon" sizes="180x180" href="./heimora-touch-icon.png?v=2"><link rel="manifest" href="./manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="HEIMORA">
 <style>
 :root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#183331;background:#f5f7f6}*{box-sizing:border-box}body{margin:0}header{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid #e6ece9;padding:18px max(20px,calc((100vw - 760px)/2));display:flex;justify-content:space-between;align-items:center}header strong{display:flex;align-items:center;gap:9px}header .brand-icon{width:31px;height:31px;border-radius:8px;display:block}header strong{color:#075e56;letter-spacing:1px;font-size:21px}main{max-width:760px;margin:auto;padding:20px 16px 110px}h1{font-size:25px;margin:8px 0 5px}h2{font-size:19px;margin:0 0 12px}p{color:#657774;line-height:1.5}.muted{color:#667874;font-size:13px}.card{background:#fff;border:1px solid #e8efeb;border-radius:20px;padding:18px;margin:12px 0;box-shadow:0 5px 18px #173c3108}.hero{background:#e7f4ee;border-color:#d7eade;padding:22px}.eyebrow{color:#5e7870;font-size:13px}.hero .value{font-size:35px;font-weight:800;margin:9px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid .card{margin:0}.category{cursor:pointer;text-align:left;width:100%;color:inherit}.category .value{font-size:22px;font-weight:750;margin:12px 0 2px;overflow-wrap:anywhere}.category .name{font-size:13px;font-weight:700}.category .symbol{font-size:21px;margin-bottom:8px;height:28px;display:flex;align-items:center}.category .symbol svg{width:26px;height:26px;display:block}.category .symbol{color:#087b6b}.category[data-cat="Gas"] .symbol{color:#e47a30}.category[data-cat="Corrente"] .symbol{color:#d69b17}.category[data-cat="TV e Internet"] .symbol{color:#3385c6}.category[data-cat="Mutuo + prestito"] .symbol{color:#6681a4}.category[data-cat="Condominio"] .symbol{color:#618c79}.full{width:100%}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.record{padding:14px 0;border-bottom:1px solid #edf1ee}.record:last-child{border:0}.record b{display:block}.record .muted{margin-top:4px}.amount{font-weight:750;white-space:nowrap}.tabs{position:fixed;bottom:0;left:0;right:0;z-index:5;display:flex;justify-content:center;background:white;border-top:1px solid #e4ece8;padding:9px 6px calc(9px + env(safe-area-inset-bottom))}.tabs button{flex:1;max-width:165px;background:none;border:0;padding:7px 0;color:#71827d;font:inherit;font-size:13px}.tabs button.active{color:#087a69;font-weight:800}.tabs button span{display:flex;align-items:center;justify-content:center;width:28px;height:28px;margin:0 auto 4px;font-size:0;line-height:1}.tabs button span svg{display:block;width:24px;height:24px;flex:none;stroke-width:1.9}button{cursor:pointer;font:inherit}.primary{background:#087b6b;color:white;border:0;border-radius:12px;padding:12px 16px;font-weight:700}.secondary{background:#eaf3ee;color:#086959;border:0;border-radius:12px;padding:10px 13px;font-weight:650}.danger{background:#fff0ee;color:#9b372f}.hidden{display:none!important}select,input{font:inherit;background:#fff;border:1px solid #d6e2db;border-radius:11px;padding:11px;max-width:100%;width:100%}label{display:block;font-size:13px;font-weight:650;margin:14px 0 6px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.filters select{width:auto;flex:none}.filters select[id$="Year"]{width:128px;min-width:128px;text-align:center}.filters select[id$="Cat"]{width:min(100%,250px);flex:1 1 200px}#homeYear,.filters select{font-weight:650;font-size:16px;padding:12px 14px;border-radius:13px;background:#fff;border:1px solid #d6e2db}#homeYear{width:128px;min-width:128px;flex:none;text-align:center}.filters{align-items:center}@media(max-width:420px){.filters select[id$="Year"]{width:112px;min-width:112px}.filters select[id$="Cat"]{flex:1 1 145px;min-width:0}}.pill{display:inline-block;padding:5px 9px;border-radius:99px;font-size:11px;background:#eef3f0;color:#57736b}.warning{background:#fff7e8;color:#80602e;padding:12px 14px;border-radius:12px;font-size:13px}.condo-bar{display:grid;grid-template-columns:minmax(130px,220px) minmax(0,1fr) 100px;gap:12px;align-items:center;margin:14px 0;font-size:13px}.condo-bar-label{min-width:0;overflow-wrap:anywhere}.condo-bar-value{text-align:right;white-space:nowrap}@media(max-width:560px){.condo-bar{grid-template-columns:minmax(0,1fr) 92px;gap:7px}.condo-bar .track{grid-column:1/-1;grid-row:2}.condo-bar-value{grid-column:2;grid-row:1}}.barrow{display:grid;grid-template-columns:72px 1fr 85px;gap:9px;align-items:center;margin:12px 0;font-size:12px}.track{background:#e9efeb;height:12px;border-radius:9px;overflow:hidden}.fill{height:100%;background:#168b7a;border-radius:9px}.empty{padding:28px;text-align:center;color:#71827d}dialog{border:0;border-radius:20px;padding:22px;width:min(94vw,510px);max-height:88vh;overflow:auto}dialog::backdrop{background:#102e2a88}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.actions>*{flex:1}small{font-size:12px}.link{background:none;border:0;color:#087b6b;padding:5px}.note{margin:14px 0;font-size:12px;color:#71827d}.import-notice{background:#e7f4ee;border:1px solid #cfe6d9;border-radius:13px;padding:13px 14px;margin:12px 0 16px;color:#14594e;font-size:13px;line-height:1.5}.import-notice strong{display:block;margin-bottom:4px;font-size:14px}.import-notice .missing{display:block;color:#86602c;margin-top:5px}@media(min-width:680px){.grid{gap:16px}.category .value{font-size:26px}}
  .brand-home{display:flex;align-items:center;gap:9px;padding:0;border:0;background:transparent;color:#075e56;font-size:21px;font-weight:750;letter-spacing:1px;white-space:nowrap}.brand-home:focus-visible{outline:2px solid #087b6b;outline-offset:5px;border-radius:5px}.account-avatar svg{width:19px;height:19px;display:block}@media(max-width:390px){.brand-home{font-size:18px}}.account-area{position:relative;min-width:0}.account-button{display:flex;align-items:center;gap:7px;border:1px solid #dce8e2;background:#f5faf7;border-radius:99px;padding:6px 10px;color:#075e56;font-size:13px;font-weight:700;max-width:180px}.account-button #accountName{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.account-avatar{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#d8ede3;color:#075e56;font-size:20px}.account-menu{position:absolute;right:0;top:calc(100% + 12px);z-index:12;width:min(340px,calc(100vw - 30px));padding:18px;background:#fff;border:1px solid #dce8e2;border-radius:18px;box-shadow:0 14px 40px #143c3330}.account-menu-heading{display:flex;flex-direction:column;gap:3px;overflow-wrap:anywhere;margin-bottom:12px}.account-status{padding:10px 12px;background:#eaf5ee;border-radius:10px;color:#12594e;font-size:12px;line-height:1.45;margin-bottom:12px;overflow-wrap:anywhere}.account-menu label{margin-top:9px}.account-menu input{padding:10px}.account-menu .note{font-size:11px}header{z-index:15}@media(max-width:390px){header{padding-left:12px;padding-right:12px}header strong{font-size:18px}.account-button{max-width:136px;padding:5px 8px}} body.auth-locked>header,body.auth-locked>main,body.auth-locked>nav{display:none!important}#authGate{display:none;min-height:100dvh;padding:30px 16px;align-items:center;justify-content:center;background:#f5f7f6}body.auth-locked #authGate{display:flex}.auth-gate-card{width:min(100%,420px);padding:30px;background:#fff;border:1px solid #e1ebe5;border-radius:22px;box-shadow:0 8px 32px #173c3112}.auth-gate-card h1{color:#075e56;margin:14px 0 0}.auth-gate-card #authGateStatus{font-size:13px;color:#075e56;margin:12px 0;line-height:1.5}.auth-gate-card input{width:100%} .movement-detail{padding:10px 12px!important;margin-bottom:8px!important}.movement-detail dl{grid-template-columns:78px minmax(0,1fr)!important;gap:5px 9px!important}.movement-actions{margin-top:10px!important}.movement-actions button{flex:0 1 auto!important;min-width:120px;padding:9px 16px!important}.movement-summary{padding:11px 0!important}.movement-side .pill{font-size:11px;padding:4px 7px}.movement-side{display:flex;flex-direction:column;align-items:flex-end;gap:3px}.movement-side .pill{margin-top:0}.movement-chevron{position:absolute;right:0;bottom:0}.movement-side{position:relative;padding-right:16px} .movement-item{border-bottom:1px solid #e8eeeb}.movement-item:last-child{border-bottom:0}.movement-summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;padding:15px 0;background:none;border:0;text-align:left;color:inherit}.movement-main{min-width:0}.movement-main strong{display:block;font-size:15px;overflow-wrap:anywhere}.movement-main .muted{display:block;margin-top:5px}.movement-side{text-align:right;white-space:nowrap}.movement-side .amount{font-size:16px}.movement-side .pill{display:inline-block;margin-top:5px}.movement-detail{background:#f6faf7;border-radius:12px;padding:13px;margin:0 0 12px;font-size:13px}.movement-detail dl{display:grid;grid-template-columns:90px minmax(0,1fr);gap:9px;margin:0}.movement-detail dt{color:#657774}.movement-detail dd{margin:0;overflow-wrap:anywhere}.movement-chevron{display:inline-block;font-size:14px;margin-left:5px;color:#71827d}.movement-item.is-open .movement-chevron{transform:rotate(180deg)}.movement-actions{display:flex;gap:8px;margin-top:14px}.movement-actions button{flex:1}.movement-summary:focus-visible{outline:2px solid #087b6b;outline-offset:2px;border-radius:8px}@media(max-width:390px){.movement-main strong{font-size:14px}.movement-side .amount{font-size:14px}.movement-summary{gap:8px}} .barrow[data-detail],.condo-bar[data-detail]{cursor:pointer;border-radius:9px} .barrow[data-detail]:hover,.condo-bar[data-detail]:hover{background:#e7f3ee} .barrow[data-detail]:focus-visible,.condo-bar[data-detail]:focus-visible{outline:3px solid #178a78;outline-offset:3px}.detail-line{padding:12px 0;border-bottom:1px solid #e4ebe8}.detail-line:last-child{border:0}.detail-line .muted{font-size:.87rem} /* Home: keep primary actions fully above the fixed bottom navigation on iPhone. */
@@ -26,44 +26,38 @@ main{padding-bottom:calc(125px + env(safe-area-inset-bottom))}
 <dialog id="condoDialog"><div class="row"><h2>Verifica rate condominiali</h2><button class="link" onclick="condoDialog.close()">✕</button></div><p class="note" id="condoSummary"></p><div id="condoPreview"></div><div class="actions"><button class="secondary" onclick="condoDialog.close()">Annulla</button><button class="primary" id="condoConfirm">Importa rate selezionate</button></div></dialog><dialog id="recurringDialog"><div class="row"><h2>Nuova rata ricorrente</h2><button class="link" onclick="recurringDialog.close()">✕</button></div><form id="recurringForm"><label>Tipo di rata</label><select name="type" required><option value="Mutuo">Mutuo</option><option value="Prestito">Prestito</option><option value="Ordinaria">Condominio · Ordinaria</option><option value="Straordinaria">Condominio · Straordinaria</option></select><label>Descrizione</label><input name="description" maxlength="100" required placeholder="Es. Rata mutuo"><label>Importo per rata (€)</label><input name="amount" type="number" min="0.01" step="0.01" required><label>Giorno del mese di scadenza</label><input name="day" type="number" min="1" max="31" value="15" required><label>Prima rata (mese)</label><input name="start" type="month" required><label>Ultima rata (mese, facoltativo)</label><input name="end" type="month"><p class="note">Una rata al mese. Per rate condominiali non mensili, registrale singolarmente in Movimenti. Se il giorno scelto non esiste nel mese, si usa l'ultimo giorno.</p><div class="actions"><button class="secondary" type="button" onclick="recurringDialog.close()">Annulla</button><button class="primary" type="submit">Attiva rate</button></div></form></dialog>
 <script>
 "use strict";
-// Appwrite Cloud: sessione e sincronizzazione dell’archivio condiviso.
-const CLOUD_ENDPOINT="https://fra.cloud.appwrite.io/v1",CLOUD_PROJECT="6aecea21002c171c4062",CLOUD_DATABASE="6af055cc001b7a62846b",CLOUD_TABLE="Movimenti",CLOUD_TEAM="Casa";
-// Appwrite documenta X-Fallback-Cookies per browser che bloccano cookie di terze parti.
-const CLOUD_FALLBACK_KEY="heimora-appwrite-session-fallback";
-function cloudFallback(){try{return localStorage.getItem(CLOUD_FALLBACK_KEY)||""}catch(e){return ""}}
-async function cloudRequest(path,method="GET",body){
- const fallback=cloudFallback();
- const controller=new AbortController();
- const timeout=setTimeout(()=>controller.abort(),12000);
- try{
-  const response=await fetch(CLOUD_ENDPOINT+path,{method,signal:controller.signal,credentials:"include",headers:{"X-Appwrite-Project":CLOUD_PROJECT,...(fallback?{"X-Fallback-Cookies":fallback}:{}),...(body?{"Content-Type":"application/json"}:{})},...(body?{body:JSON.stringify(body)}:{})});
-  const returnedFallback=response.headers.get("X-Fallback-Cookies");
-  if(returnedFallback){try{localStorage.setItem(CLOUD_FALLBACK_KEY,returnedFallback)}catch(e){console.warn("Impossibile conservare la sessione",e)}}
-  let data={};try{data=await response.json()}catch(e){if((response.ok&&method==="GET")||e.name==="AbortError")throw e}
-  if(!response.ok){const error=new Error(data.message||"Connessione non riuscita ("+response.status+")");error.status=response.status;error.type=data.type;throw error}
-  return data;
- }finally{clearTimeout(timeout)}
+// Firebase preview uses a separate local archive, even on the same origin.
+const storage={
+ getItem:key=>localStorage.getItem("heimora-firebase:"+key),
+ setItem:(key,value)=>localStorage.setItem("heimora-firebase:"+key,value)
+};
+let firebaseConnection;
+function firebaseCloud(){
+ if(!firebaseConnection){
+  firebaseConnection=import("./firebase-cloud.mjs")
+   .then(module=>module.connectFirebase(()=>{
+    if(autoSyncRunning)autoSyncRefresh=true;
+    else autoSyncSoon();
+   })).catch(error=>{firebaseConnection=undefined;throw error});
+ }
+ return firebaseConnection;
 }
 function cloudErrorMessage(error){
- if(error.type==="project_paused")return "Appwrite ha sospeso il progetto. Riattivalo dalla Console Appwrite, poi riprova.";
  if(!navigator.onLine)return "Sei offline. Ricollegati a Internet per accedere o sincronizzare.";
- if(error.name==="AbortError")return "Appwrite non ha risposto in tempo. Riprova tra poco.";
- if(error instanceof TypeError)return "Appwrite non è raggiungibile. Riprova tra poco.";
+ if(error.code==="permission-denied")return "Questo account non è autorizzato ad accedere ai dati.";
+ if(["auth/invalid-credential","auth/wrong-password","auth/user-not-found"].includes(error.code))return "Email o password non corretta.";
+ if(error.code==="unavailable"||error instanceof TypeError)return "Firebase non è raggiungibile. Riprova tra poco.";
  return error.message;
 }
-async function cloudLogin(email,password){
- // Reuse an existing Appwrite session instead of attempting to create a second one.
- try{return await cloudRequest("/account")}catch(e){if(e.status!==401)throw e}
- try{await cloudRequest("/account/sessions/email","POST",{email,password})}
- catch(e){
-  if(e.status===409||/session is active/i.test(e.message||"")){
-   // After a paused project resumes, Appwrite may retain a valid session.
-   return await cloudRequest("/account");
-  }
-  throw e;
- }
- return await cloudRequest("/account");
+async function cloudRequest(path,method="GET",body,expected){
+ const cloud=await firebaseCloud();
+ if(path==="account")return cloud.account();
+ if(path==="logout")return cloud.logout();
+ const [name,id]=path.split("/");
+ if(method==="GET")return id?cloud.readRow(name,id):{rows:await cloud.readRows(name)};
+ return cloud.writeRow(name,id||body?.rowId,method,body?.data.payload,expected);
 }
+async function cloudLogin(email,password){return (await firebaseCloud()).login(email,password)}
 function authLock(locked){document.body.classList.toggle("auth-locked",locked);if(locked){document.querySelectorAll("dialog[open]").forEach(d=>d.close());toggleAccountMenu(false)}}
 const authGateRetry=document.getElementById("authGateRetry");
 let cloudAuthBusy=false;
@@ -96,7 +90,7 @@ async function cloudCheck(){
  cloudAuthBusy=true;setGateRetry(false);gateMessage("Verifica della sessione…");
  document.getElementById("cloudRetry").classList.add("hidden");cloudMessage("Verifica dell’accesso in corso…");
  try{
-  const user=await cloudRequest("/account");
+  const user=await cloudRequest("account");
   cloudControls(true,user);authLock(false);autoSyncStart(user);
   cloudMessage("Connesso come "+(user.name||user.email||"utente")+". Sincronizzazione cloud automatica attiva.");
  }catch(e){
@@ -120,15 +114,14 @@ document.getElementById("cloudLoginForm").addEventListener("submit",async event=
    cloudMessage("Accesso riuscito: "+(user.name||user.email||"utente")+". I dati locali non sono stati modificati.");
   }catch(checkError){
    cloudControls(false);authLock(true);
-   cloudMessage(checkError.status===401?"Appwrite ha accettato la password ma non ha restituito una sessione utilizzabile. Verifica che il browser consenta la memoria locale e riprova; i dati non sono stati modificati.":"Login creato, ma verifica della sessione fallita: "+checkError.message);
+   cloudMessage(checkError.status===401?"Firebase ha accettato la password ma non ha restituito una sessione utilizzabile. Verifica che il browser consenta la memoria locale e riprova; i dati non sono stati modificati.":"Login creato, ma verifica della sessione fallita: "+checkError.message);
   }
  }
  catch(e){cloudMessage("Accesso non riuscito: "+cloudErrorMessage(e))}
  finally{button.disabled=false}
 });
-document.getElementById("cloudLogout").addEventListener("click",async()=>{try{await cloudRequest("/account/sessions/current","DELETE");try{localStorage.removeItem(CLOUD_FALLBACK_KEY)}catch(e){}cloudControls(false);window.heimoraCurrentUser=null;autoSyncReady=false;condoCloudReady=false;authLock(true);gateMessage("Sessione terminata. Accedi per visualizzare i dati.");cloudMessage("Disconnesso. I dati locali non sono stati modificati.")}catch(e){cloudMessage("Impossibile uscire: "+e.message)}});
+document.getElementById("cloudLogout").addEventListener("click",async()=>{try{await cloudRequest("logout","DELETE");cloudControls(false);window.heimoraCurrentUser=null;autoSyncReady=false;condoCloudReady=false;authLock(true);gateMessage("Sessione terminata. Accedi per visualizzare i dati.");cloudMessage("Disconnesso. I dati locali non sono stati modificati.")}catch(e){cloudMessage("Impossibile uscire: "+e.message)}});
 document.getElementById("cloudRetry").addEventListener("click",cloudCheck);
-cloudCheck();
 // Migrazione controllata: cloud mai sovrascritto automaticamente e nessuna cancellazione.
 let syncCloudRows=null,syncBusy=false;
 const syncStatus=document.getElementById("syncStatus"),syncUpload=document.getElementById("syncUpload"),syncDownload=document.getElementById("syncDownload"),syncInspect=document.getElementById("syncInspect");
@@ -144,18 +137,9 @@ async function syncRowId(id){
  const bytes=new TextEncoder().encode(id),hash=await crypto.subtle.digest("SHA-256",bytes);
  return "r_"+Array.from(new Uint8Array(hash)).map(x=>x.toString(16).padStart(2,"0")).join("").slice(0,30);
 }
-function syncPath(){return "/tablesdb/"+encodeURIComponent(CLOUD_DATABASE)+"/tables/"+encodeURIComponent(CLOUD_TABLE)+"/rows"}
-async function syncRead(){
- let all=[],offset=0;
- for(let page=0;page<100;page++){
-  const q=new URLSearchParams();q.append("queries[]",JSON.stringify({method:"limit",values:[100]}));q.append("queries[]",JSON.stringify({method:"offset",values:[offset]}));
-  const data=await cloudRequest(syncPath()+"?"+q.toString());
-  if(!Array.isArray(data.rows))throw Error("Risposta Appwrite senza elenco movimenti");
-  all.push(...data.rows);offset+=data.rows.length;
-  if(data.rows.length<100)break;
-  if(page===99)throw Error("Troppe pagine: lettura incompleta");
- }
- return all;
+function syncPath(){return "movements"}
+async function syncRead(useListener=false){
+ return (await firebaseCloud()).readRows(syncPath(),useListener);
 }
 function syncParse(rows){
  return rows.map(row=>{let data;try{data=JSON.parse(row.payload)}catch(e){throw Error("Un movimento cloud non è leggibile")};if(!valid(data))throw Error("Un movimento cloud non è valido");return data});
@@ -191,7 +175,7 @@ async function syncInspectCloud(){
  if(syncBusy)return;syncBusy=true;syncButtons();syncMessage("Lettura del cloud in corso…");
  const audit=document.getElementById("syncAudit");audit.style.display="none";
  try{
-  await cloudRequest("/account");
+  await cloudRequest("account");
   syncCloudRows=await syncRead();
   const cloudRecords=syncParse(syncCloudRows);
   audit.textContent=cloudAuditReport(cloudRecords);audit.style.display="block";
@@ -216,8 +200,7 @@ async function syncUploadLocal(){
    // Il piano Free può limitare le scritture: pause tra richieste e stop pulito a HTTP 429.
    await new Promise(resolve=>setTimeout(resolve,1100));
    const rowId=await syncRowId(record.id);
-   try{await cloudRequest(syncPath(),"POST",{rowId,data:{payload:JSON.stringify(record)}})}
-   catch(e){if(e.status!==409)throw e}
+   await cloudRequest(syncPath(),"POST",{rowId,data:{payload:JSON.stringify(record)}});
    completed++;
    if(completed%5===0)syncMessage("Caricati "+completed+" dei "+missing.length+" mancanti. Attendi senza chiudere la pagina…");
   }
@@ -228,7 +211,7 @@ async function syncUploadLocal(){
   syncMessage("Verifica completata: "+snapshot.length+" movimenti locali presenti nel cloud. Nessun dato locale modificato.");
  }catch(e){
   syncCloudRows=null;
-  syncMessage("Operazione sospesa dopo "+completed+" nuovi movimenti: "+e.message+(e.status===429?". Limite temporaneo Appwrite: attendi prima di riprovare.":"")+". I dati locali sono intatti. Premi Controlla cloud prima di riprendere.");
+  syncMessage("Operazione sospesa dopo "+completed+" nuovi movimenti: "+e.message+(e.status===429?". Limite temporaneo Firebase: attendi prima di riprovare.":"")+". I dati locali sono intatti. Premi Controlla cloud prima di riprendere.");
  }finally{syncBusy=false;syncButtons()}
 }
 async function syncImportCloud(){
@@ -238,7 +221,7 @@ async function syncImportCloud(){
  try{
   const incoming=syncParse(await syncRead());let added=0,skipped=0;
   for(const r of incoming){if(records.some(x=>sameHistoricalRecord(x,r))){skipped++;continue}records.push(r);added++}
-  localStorage.setItem(KEY,JSON.stringify(records));render();
+  storage.setItem(KEY,JSON.stringify(records));render();
   syncMessage("Importazione completata: "+added+" nuovi, "+skipped+" già presenti. Totale locale: "+records.length+". Nessun movimento eliminato.");
   syncCloudRows=await syncRead();
  }catch(e){syncMessage("Importazione interrotta: "+e.message+". Controlla i dati prima di riprovare.")}
@@ -248,10 +231,10 @@ syncInspect.addEventListener("click",syncInspectCloud);
 syncUpload.addEventListener("click",syncUploadLocal);
 syncDownload.addEventListener("click",syncImportCloud);
 // Sincronizzazione prudente: cloud autorevole per nuovi dati, modifiche locali in coda.
-let autoSyncReady=false,autoSyncRunning=false,autoSyncPending=false,autoSyncUser=null;
+let autoSyncReady=false,autoSyncRunning=false,autoSyncPending=false,autoSyncRefresh=false,autoSyncUser=null;
 const AUTO_BASE_KEY="heimora-cloud-baseline-v1",AUTO_QUEUE_KEY="heimora-cloud-queue-v1";
-function autoQueue(){try{return JSON.parse(localStorage.getItem(AUTO_QUEUE_KEY)||"[]")}catch(e){return []}}
-function autoQueueSave(q){localStorage.setItem(AUTO_QUEUE_KEY,JSON.stringify(q))}
+function autoQueue(){try{return JSON.parse(storage.getItem(AUTO_QUEUE_KEY)||"[]")}catch(e){return []}}
+function autoQueueSave(q){storage.setItem(AUTO_QUEUE_KEY,JSON.stringify(q))}
 function autoTrackChanges(){
  if(!autoSyncReady)return;
  const previous=new Map((autoSyncBaseline||[]).map(r=>[r.id,r]));
@@ -266,6 +249,7 @@ function autoTrackChanges(){
  }
  // Non inviare cancellazioni finché non esiste un protocollo sicuro.
  autoQueueSave(queue);
+ if(autoSyncRunning)autoSyncRefresh=true;
  // La base resta l’ultima versione cloud conosciuta, non quella appena modificata.
  autoSyncSoon();
 }
@@ -277,7 +261,8 @@ async function autoSyncNow(){
  if(!autoSyncReady||!navigator.onLine||Date.now()<autoSyncRetryAt||autoSyncRunning||document.body.classList.contains("auth-locked")||syncBusy)return;
  autoSyncRunning=true;
  try{
-  const cloudRows=await syncRead(),cloud=syncParse(cloudRows),byId=new Map(cloud.map(r=>[r.id,r]));
+  const cloudRows=await syncRead(autoQueue().length===0),cloud=syncParse(cloudRows),byId=new Map(cloud.map(r=>[r.id,r]));
+  const rowsById=new Map(cloud.map((record,index)=>[record.id,cloudRows[index]]));
   autoSyncLastError="";
   const queue=autoQueue(),remaining=[];
   // Non sostituire modifiche locali senza una base di sincronizzazione verificata.
@@ -292,16 +277,16 @@ async function autoSyncNow(){
    }
    if(cloud.length){
     const backupKey="heimora-bootstrap-backup-"+autoSyncUser;
-    if(!localStorage.getItem(backupKey)){
-     try{localStorage.setItem(backupKey,JSON.stringify(records))}catch(e){
+    if(!storage.getItem(backupKey)){
+     try{storage.setItem(backupKey,JSON.stringify(records))}catch(e){
       syncMessage("Impossibile conservare il backup locale: "+e.message+". Collegamento sospeso.");return;
      }
     }
     records.splice(0,records.length,...cloud.map(r=>({...r})));
-    localStorage.setItem(KEY,JSON.stringify(records));
+    storage.setItem(KEY,JSON.stringify(records));
    }
    autoSyncBaseline=cloud.map(r=>({...r}));
-   localStorage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
+   storage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
    document.getElementById("syncInitialize").style.display="none";
    autoSyncFailures=0;autoSyncRetryAt=0;showCloudAvailability("");
    render();
@@ -313,16 +298,18 @@ async function autoSyncNow(){
   for(const [index,item] of queue.entries()){
    const remote=byId.get(item.id);
    if(remote&&JSON.stringify(remote)===JSON.stringify(item.record)){confirmedIds.add(item.id);continue;}
-   if(remote&&JSON.stringify(remote)!==JSON.stringify(item.base)){remaining.push(item);autoSyncLastError="Conflitto di versione: il movimento è diverso dalla base locale. Nessuna sovrascrittura eseguita.";continue}
+   if((remote&&JSON.stringify(remote)!==JSON.stringify(item.base))||(!remote&&item.base)){remaining.push(item);autoSyncLastError="Conflitto di versione: il movimento è diverso dalla base locale. Nessuna sovrascrittura eseguita.";continue}
    try{
-    const rowId=await syncRowId(item.id);
-    await cloudRequest(syncPath()+(remote?"/"+encodeURIComponent(rowId):""),remote?"PATCH":"POST",remote?{data:{payload:JSON.stringify(item.record)}}:{rowId,data:{payload:JSON.stringify(item.record)}});
+    const row=rowsById.get(item.id);
+    const rowId=row?.$id||await syncRowId(item.id);
+    await cloudRequest(syncPath()+(remote?"/"+rowId:""),remote?"PATCH":"POST",{rowId,data:{payload:JSON.stringify(item.record)}},row?.payload);
     byId.set(item.id,item.record);
     confirmedIds.add(item.id);
    }catch(e){
     remaining.push(item);
     autoSyncLastError="Salvataggio cloud non riuscito: "+cloudErrorMessage(e);
-    if(!e.status||e.status===401||e.status===429||e.status>=500||e.type==="project_paused"){
+    if(e.status===409){autoSyncLastError="Conflitto di versione: "+e.message;continue}
+    if(!e.status||e.status===401||e.status===429||e.status>=500){
      for(const pending of queue.slice(index+1))remaining.push(pending);
      retryNeeded=true;
      break;
@@ -360,9 +347,9 @@ async function autoSyncNow(){
    else if(JSON.stringify(records[index])!==JSON.stringify(r)){records[index]={...r};updated++}
   }
   const localChanged=added||updated||removedRemote.length;
-  if(localChanged)localStorage.setItem(KEY,JSON.stringify(records));
+  if(localChanged)storage.setItem(KEY,JSON.stringify(records));
   const nextBaseline=[...byId.values()].map(r=>({...r}));
-  localStorage.setItem(AUTO_BASE_KEY,JSON.stringify(nextBaseline));
+  storage.setItem(AUTO_BASE_KEY,JSON.stringify(nextBaseline));
   autoSyncBaseline=nextBaseline;
   autoQueueSave(safeRemaining);
   if(localChanged)render();
@@ -375,7 +362,7 @@ async function autoSyncNow(){
   const message="Sincronizzazione sospesa. "+cloudErrorMessage(e);
   syncMessage(message);showCloudAvailability(message);
  }
- finally{autoSyncRunning=false;if(autoSyncReady&&autoSyncBaseline)setTimeout(()=>{if(!autoSyncRunning&&!autoQueue().length){ensureDecember2026Loans();extendLoanSchedule()}},500)}
+ finally{autoSyncRunning=false;if(autoSyncRefresh){autoSyncRefresh=false;autoSyncSoon()}if(autoSyncReady&&autoSyncBaseline)setTimeout(()=>{if(!autoSyncRunning&&!autoQueue().length){ensureDecember2026Loans();extendLoanSchedule()}},500)}
 }
 let syncConfirmCallback=null;
 const syncConfirmDialog=document.getElementById("syncConfirmDialog");
@@ -398,17 +385,17 @@ async function resolvePaymentConflict(){
  if(!local||local.category!=="Condominio"||local.status!=="paid"||!local.paymentDate||local.paymentDate>localToday()||JSON.stringify(local)!==JSON.stringify(item.record)){alert("La modifica locale non corrisponde a un pagamento condominiale confermato.");return}
  syncBusy=true;syncButtons();
  try{
-  const cloud=syncParse(await syncRead()),remote=cloud.find(r=>r.id===item.id);
+  const rows=await syncRead(),cloud=syncParse(rows),index=cloud.findIndex(r=>r.id===item.id),remote=cloud[index];
   if(!remote||remote.category!=="Condominio"||remote.status==="paid"){throw Error("La rata cloud non risulta più da pagare. Nessuna modifica effettuata.")}
   const withoutPayment=r=>{const o={...r};delete o.status;delete o.paymentDate;return o};
   if(JSON.stringify(withoutPayment(remote))!==JSON.stringify(withoutPayment(local)))throw Error("I dati della rata differiscono oltre allo stato del pagamento. Nessuna modifica effettuata.");
   if(!await askSyncConfirmation("Rata condominiale · "+fmt(local.amount)+" · Pagata il "+dateIT(local.paymentDate)))return;
-  const rowId=await syncRowId(item.id),updated={...remote,status:"paid",paymentDate:local.paymentDate};
-  await cloudRequest(syncPath()+"/"+encodeURIComponent(rowId),"PATCH",{data:{payload:JSON.stringify(updated)}});
+  const row=rows[index],updated={...remote,status:"paid",paymentDate:local.paymentDate};
+  await cloudRequest(syncPath()+"/"+row.$id,"PATCH",{data:{payload:JSON.stringify(updated)}},row.payload);
   autoQueueSave(autoQueue().filter(x=>x.id!==item.id));
   const baseline=Array.isArray(autoSyncBaseline)?autoSyncBaseline:records.map(r=>({...r}));
   autoSyncBaseline=baseline.map(r=>r.id===item.id?{...updated}:r);
-  localStorage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
+  storage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
   syncMessage("Pagamento confermato nel cloud: "+fmt(updated.amount)+" · "+dateIT(updated.paymentDate)+". Verifica sull’altro dispositivo.");
   document.getElementById("syncResolvePayment").style.display="none";
  }catch(e){syncMessage("Risoluzione non eseguita: "+e.message)}
@@ -455,11 +442,11 @@ async function initializeDeviceSync(){
   if(!await askSyncConfirmation(description)){syncMessage("Collegamento annullato. Nessun dato modificato.");return}
   // Backup automatico locale prima della prima applicazione cloud.
   const backupKey="heimora-before-cloud-initialization-v1";
-  localStorage.setItem(backupKey,JSON.stringify(records));
+  storage.setItem(backupKey,JSON.stringify(records));
   for(const remote of changes)Object.assign(localMap.get(remote.id),remote);
-  localStorage.setItem(KEY,JSON.stringify(records));
+  storage.setItem(KEY,JSON.stringify(records));
   autoSyncBaseline=cloud.map(r=>({...r}));
-  localStorage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
+  storage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
   document.getElementById("syncInitialize").style.display="none";
   render();
   syncMessage("Dispositivo collegato: "+cloud.length+" movimenti verificati, "+changes.length+" pagamenti aggiornati. Backup locale conservato.");
@@ -468,14 +455,13 @@ async function initializeDeviceSync(){
 }
 document.getElementById("syncInitialize").addEventListener("click",initializeDeviceSync);
 // Configurazione annuale privata: nessun importo finanziario nel codice pubblico.
-const LOAN_CONFIG_TABLE="6af36d560039d24a0a12";
 const LOAN_CONFIG_ROW="rate-annuali-2027";
 let loanAnnualConfig=null,loanConfigLoading=false;
 async function loadLoanConfig(){
  if(!autoSyncReady||document.body.classList.contains("auth-locked")||loanConfigLoading)return;
  loanConfigLoading=true;
  try{
-  const path="/tablesdb/"+encodeURIComponent(CLOUD_DATABASE)+"/tables/"+encodeURIComponent(LOAN_CONFIG_TABLE)+"/rows/"+encodeURIComponent(LOAN_CONFIG_ROW);
+  const path="privateConfig/"+LOAN_CONFIG_ROW;
   const row=await cloudRequest(path),saved=JSON.parse(row.payload);
   const values=saved&&saved.annualCents;
   if(saved.year!==2027||!values||!["Mutuo","Prestito"].every(type=>Number.isSafeInteger(values[type])&&values[type]>0))
@@ -491,11 +477,11 @@ function autoSyncStart(user){
  window.heimoraCurrentUser={id:user?.$id||"",name:user?.name||user?.email?.split("@")[0]||"Utente"};
  autoSyncUser=user?.$id||null;
  if(!autoSyncUser)return;
- const key="heimora-cloud-user-v1",last=localStorage.getItem(key);
+ const key="heimora-cloud-user-v1",last=storage.getItem(key);
  if(last&&last!==autoSyncUser){autoSyncReady=false;condoCloudReady=false;syncMessage("Account differente: sincronizzazione sospesa per evitare mescolanza di archivi locali.");return}
- localStorage.setItem(key,autoSyncUser);
+ storage.setItem(key,autoSyncUser);
  autoSyncReady=true;condoCloudReady=true;condoCloudSync();loadLoanConfig();
- try{autoSyncBaseline=JSON.parse(localStorage.getItem(AUTO_BASE_KEY)||"null")}catch(e){}
+ try{autoSyncBaseline=JSON.parse(storage.getItem(AUTO_BASE_KEY)||"null")}catch(e){}
  if(!Array.isArray(autoSyncBaseline)){
   // Primo avvio: non inventare una base cloud; serve un confronto esplicito.
   autoSyncBaseline=null;
@@ -518,10 +504,10 @@ function autoSyncStart(user){
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)autoSyncSoon()});
 window.addEventListener("online",()=>{autoSyncRetryAt=0;autoSyncSoon();condoCloudSync()});
 // Controllo leggero quando la pagina resta aperta, senza richiedere ricarica manuale.
-setInterval(()=>{if(!document.hidden)autoSyncSoon()},30000);
+setInterval(()=>{if(!document.hidden&&autoSyncRetryAt)autoSyncSoon()},30000);
 setInterval(()=>{if(!document.hidden&&Date.now()>=autoSyncRetryAt)condoCloudSync()},120000);
 const KEY="heimora-records-v1",CATS=["Gas","Corrente","TV e Internet","Mutuo + prestito","Condominio","Spesa supermercato"],ICONS=["♨","ϟ","◉","⌂","▥","🛒"],SUB={"TV e Internet":["TV","Internet"],"Mutuo + prestito":["Mutuo","Prestito"],"Condominio":["Ordinaria","Straordinaria"]};
-const RECURRING_KEY="heimora-recurring-v1";let recurring=[];try{const data=JSON.parse(localStorage.getItem(RECURRING_KEY)||"[]");if(Array.isArray(data))recurring=data.filter(t=>t&&typeof t.id==="string"&&["Mutuo","Prestito","Ordinaria","Straordinaria"].includes(t.type)&&typeof t.description==="string"&&Number.isFinite(t.amount)&&t.amount>0&&Number.isInteger(t.day)&&t.day>=1&&t.day<=31&&/^\d{4}-\d{2}$/.test(t.start))}catch(e){}let records=[];try{const raw=JSON.parse(localStorage.getItem(KEY)||"[]");if(Array.isArray(raw))records=raw.filter(valid)}catch(e){console.warn("Archivio non leggibile",e)}
+const RECURRING_KEY="heimora-recurring-v1";let recurring=[];try{const data=JSON.parse(storage.getItem(RECURRING_KEY)||"[]");if(Array.isArray(data))recurring=data.filter(t=>t&&typeof t.id==="string"&&["Mutuo","Prestito","Ordinaria","Straordinaria"].includes(t.type)&&typeof t.description==="string"&&Number.isFinite(t.amount)&&t.amount>0&&Number.isInteger(t.day)&&t.day>=1&&t.day<=31&&/^\d{4}-\d{2}$/.test(t.start))}catch(e){}let records=[];try{const raw=JSON.parse(storage.getItem(KEY)||"[]");if(Array.isArray(raw))records=raw.filter(valid)}catch(e){console.warn("Archivio non leggibile",e)}
 const fmt=n=>new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR"}).format(n),esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const nowYear=new Date().getFullYear(),yearSelectIds=["homeYear","analysisYear","archiveYear"],monthName=i=>["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"][i];
 function valid(r){return (r?.consumption===undefined||r.consumption===null||(Number.isFinite(r.consumption)&&r.consumption>=0))&&r&&typeof r.id==="string"&&CATS.includes(r.category)&&typeof r.description==="string"&&Number.isFinite(r.amount)&&r.amount>=0&&/^\d{4}-\d{2}$/.test(r.start)&&/^\d{4}-\d{2}$/.test(r.end)&&r.end>=r.start&&(r.tvFee===undefined||(Number.isFinite(r.tvFee)&&r.tvFee>=0&&r.tvFee<=r.amount&&(r.category==="Corrente"||r.tvFee===0)))&&(r.invoice===undefined||typeof r.invoice==="string")&&(r.dueDate===undefined||r.dueDate===""||/^\d{4}-\d{2}-\d{2}$/.test(r.dueDate))&&["paid","due","auto"].includes(r.status)&&(r.paymentDate===undefined||r.paymentDate===""||/^\d{4}-\d{2}-\d{2}$/.test(r.paymentDate))}
@@ -536,7 +522,7 @@ const FLAME_ICON="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" 
 function dateIT(value){if(!value)return "";const s=String(value);if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s.slice(8,10)+"/"+s.slice(5,7)+"/"+s.slice(0,4);if(/^\d{4}-\d{2}$/.test(s))return s.slice(5,7)+"/"+s.slice(0,4);return s}
 function dateISO(value){const s=String(value||"").trim();if(/^\d{2}\/\d{2}\/\d{4}$/.test(s))return s.slice(6,10)+"-"+s.slice(3,5)+"-"+s.slice(0,2);return ""}
 function localToday(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
-function settleScheduledPayments(){const today=localToday();let changed=false;for(const r of records){if(r.category==="Mutuo + prestito"&&r.status==="auto"&&r.dueDate&&r.dueDate<today){r.status="paid";changed=true}}if(changed){localStorage.setItem(KEY,JSON.stringify(records));autoTrackChanges()}}
+function settleScheduledPayments(){const today=localToday();let changed=false;for(const r of records){if(r.category==="Mutuo + prestito"&&r.status==="auto"&&r.dueDate&&r.dueDate<today){r.status="paid";changed=true}}if(changed){storage.setItem(KEY,JSON.stringify(records));autoTrackChanges()}}
 function italianDate(s){if(!s)return "";const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s);return m?m[3]+"/"+m[2]+"/"+m[1]:s}
 function parseItalianDate(s){const m=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s.trim());return m?m[3]+"-"+m[2]+"-"+m[1]:""}
 let paymentTargetId=null;
@@ -593,12 +579,11 @@ function renderCondoCalendar(){
 const CONDO_COSTS_KEY="heimora_condo_costs_v1";
 const CONDO_DETAILED_COSTS={"2021-11-19":{"Riscaldamento · quota fissa":1.91,"Riscaldamento e acqua calda · consumi":919.43,"Acqua potabile":100.62,"Spese generali di gestione":139.42,"Spese generali condominiali":102.96,"Spese box":22.81,"Ascensore":182,"Raccolta differenziata":41.98,"Spese palazzina":165.32,"Spese individuali":2.5},"2022-09-01":{"Riscaldamento · quota fissa":186.35,"Riscaldamento e acqua calda · consumi":805.04,"Acqua potabile":159.03,"Spese generali di gestione":264.41,"Spese generali condominiali":239.97,"Supercondominio":11.44,"Spese box":46.62,"Ascensore":181.37,"Raccolta differenziata":53.3,"Spese palazzina":209.91},"2023-10-01":{"Riscaldamento · quota fissa":62.77,"Riscaldamento e acqua calda · consumi":578.2,"Acqua potabile":245.26,"Spese generali di gestione":208.25,"Spese generali condominiali":112.51,"Supercondominio":5.79,"Spese box":41.54,"Ascensore":271.1,"Raccolta differenziata":50.81,"Spese palazzina":234.74,"Spese individuali":6,"Spese straordinarie":357.04},"2024-10-01":{"Riscaldamento · quota fissa":147.36,"Riscaldamento e acqua calda · consumi":1335.16,"Acqua potabile":163.75,"Spese generali di gestione":149.26,"Spese generali condominiali":93.77,"Spese box":35.31,"Ascensore":153.36,"Raccolta differenziata":36.58,"Spese palazzina":194.11,"Spese individuali":5.77,"Spese proprietà":15.21}};
 const CONDO_2025_26_PREVENTIVO={start:"2025-07-01",end:"2026-06-30",kind:"preventivo",note:"Preventivo gestione 2025/2026: esclusi 834,92 € di saldi esercizio precedente",categories:{"Spese proprietà":200.39,"Spese generali di gestione":235.40,"Spese box":26.50,"Ascensore":166.87,"Raccolta differenziata":48.78,"Riscaldamento · quota fissa":71.75,"Riscaldamento · quota variabile":33.04,"Acqua potabile":182.40,"Spese palazzina":192.09,"Spese individuali":5.56,"Spese proprietà escluso box":15.21,"Riscaldamento e acqua calda · consumi":1290.11}};
-const CONDO_CLOUD_TABLE="ProspettiCondominio";
 let condoCloudRunning=false,condoCloudReady=false;
-function condoCloudPath(){return "/tablesdb/"+encodeURIComponent(CLOUD_DATABASE)+"/tables/"+encodeURIComponent(CONDO_CLOUD_TABLE)+"/rows"}
+function condoCloudPath(){return "condoStatements"}
 function condoCloudValid(p){return p&&/^\d{4}-\d{2}-\d{2}$/.test(p.start)&&/^\d{4}-\d{2}-\d{2}$/.test(p.end)&&p.start<=p.end&&["consuntivo","preventivo"].includes(p.kind)&&p.categories&&typeof p.categories==="object"&&!Array.isArray(p.categories)&&Object.keys(p.categories).length<=30&&Object.values(p.categories).every(v=>typeof v==="number"&&Number.isFinite(v)&&v>=0)}
 function condoCloudKey(p){return p.start+"_"+p.end}
-function condoCloudLocal(){try{const x=JSON.parse(localStorage.getItem(CONDO_COSTS_KEY)||"[]");return Array.isArray(x)?x.filter(condoCloudValid):[]}catch(e){return []}}
+function condoCloudLocal(){try{const x=JSON.parse(storage.getItem(CONDO_COSTS_KEY)||"[]");return Array.isArray(x)?x.filter(condoCloudValid):[]}catch(e){return []}}
 async function condoCloudSync(){
  if(!condoCloudReady||condoCloudRunning||document.body.classList.contains("auth-locked")||!navigator.onLine)return;
  condoCloudRunning=true;
@@ -613,7 +598,7 @@ async function condoCloudSync(){
   for(const p of local)map.set(condoCloudKey(p),p);
   for(const p of remote){const k=condoCloudKey(p),old=map.get(k);if(!old||p.kind==="consuntivo"||old.kind!=="consuntivo")map.set(k,p)}
   const merged=[...map.values()];
-  if(JSON.stringify(local)!==JSON.stringify(merged)){localStorage.setItem(CONDO_COSTS_KEY,JSON.stringify(merged));renderCondoCosts()}
+  if(JSON.stringify(local)!==JSON.stringify(merged)){storage.setItem(CONDO_COSTS_KEY,JSON.stringify(merged));renderCondoCosts()}
   const remoteKeys=new Set(remote.map(condoCloudKey));
   // Primo caricamento: aggiungi soltanto i prospetti assenti; non cancellare
   // né aggiornare mai automaticamente righe cloud esistenti.
@@ -626,7 +611,7 @@ async function condoCloudSync(){
  }catch(e){if(status)status.textContent="Prospetti conservati sul dispositivo. Sincronizzazione cloud: "+e.message}
  finally{condoCloudRunning=false}
 }
-function condoCostPeriods(){try{const x=JSON.parse(localStorage.getItem(CONDO_COSTS_KEY)||"[]");if(!Array.isArray(x))return [];const periods=x.some(p=>p.start===CONDO_2025_26_PREVENTIVO.start&&p.end===CONDO_2025_26_PREVENTIVO.end)?x:[...x,CONDO_2025_26_PREVENTIVO];return periods.map(p=>{const detail=CONDO_DETAILED_COSTS[p.start];if(!detail||p.kind!=="consuntivo"||!p.categories)return p;const oldTotal=Object.values(p.categories).reduce((a,b)=>a+Number(b||0),0),newTotal=Object.values(detail).reduce((a,b)=>a+b,0);return Math.abs(oldTotal-newTotal)<0.011?{...p,categories:detail}:p})}catch(e){return []}}
+function condoCostPeriods(){try{const x=JSON.parse(storage.getItem(CONDO_COSTS_KEY)||"[]");if(!Array.isArray(x))return [];const periods=x.some(p=>p.start===CONDO_2025_26_PREVENTIVO.start&&p.end===CONDO_2025_26_PREVENTIVO.end)?x:[...x,CONDO_2025_26_PREVENTIVO];return periods.map(p=>{const detail=CONDO_DETAILED_COSTS[p.start];if(!detail||p.kind!=="consuntivo"||!p.categories)return p;const oldTotal=Object.values(p.categories).reduce((a,b)=>a+Number(b||0),0),newTotal=Object.values(detail).reduce((a,b)=>a+b,0);return Math.abs(oldTotal-newTotal)<0.011?{...p,categories:detail}:p})}catch(e){return []}}
 function condoCostDays(a,b){return Math.round((Date.parse(b+"T00:00:00Z")-Date.parse(a+"T00:00:00Z"))/86400000)+1}
 function condoCostForMonth(p,month){
  const [yy,mm]=month.split("-").map(Number),last=new Date(Date.UTC(yy,mm,0)).toISOString().slice(0,10);
@@ -693,7 +678,7 @@ document.getElementById("condoCostsImport").addEventListener("change",async func
    if(!/^\d{4}-\d{2}-\d{2}$/.test(p.start)||!/^\d{4}-\d{2}-\d{2}$/.test(p.end)||p.start>p.end||!["consuntivo","preventivo"].includes(p.kind)||!p.categories||typeof p.categories!=="object"||Object.keys(p.categories).length>30||Object.values(p.categories).some(v=>typeof v!=="number"||!Number.isFinite(v)||v<0))throw Error("Formato del prospetto non valido");
   }
   const existing=condoCostPeriods(),merged=[...existing.filter(x=>!list.some(p=>p.start===x.start&&p.end===x.end)),...list];
-  localStorage.setItem(CONDO_COSTS_KEY,JSON.stringify(merged));status.textContent="Prospetti importati: "+list.length+". Nessun movimento modificato.";renderCondoCosts();condoCloudSync();
+  storage.setItem(CONDO_COSTS_KEY,JSON.stringify(merged));status.textContent="Prospetti importati: "+list.length+". Nessun movimento modificato.";renderCondoCosts();condoCloudSync();
  }catch(e){status.textContent="Importazione non eseguita: "+e.message}
  this.value="";
 });
@@ -732,9 +717,9 @@ function showCondoPreview(raw){
 }
 document.getElementById("condoConfirm").addEventListener("click",()=>{let count=0;for(const box of condoPreview.querySelectorAll("input[data-condo-index]:checked")){const r=pendingCondo[Number(box.dataset.condoIndex)];if(!r||condoExists(r))continue;const {paidAmount,unpaidAmount,...record}=r;if(valid(record)){records.push(record);count++}}if(count){persist()}condoDialog.close();pdfStatus.textContent=count+" rate importate. Le rate già presenti sono state saltate.";pendingCondo=[]});
 function openRecurring(){recurringForm.reset();recurringForm.elements.start.value=localToday().slice(0,7);recurringDialog.showModal()}
-function saveRecurring(){localStorage.setItem(RECURRING_KEY,JSON.stringify(recurring))}
+function saveRecurring(){storage.setItem(RECURRING_KEY,JSON.stringify(recurring))}
 function dueForMonth(month,day){const [y,m]=month.split("-").map(Number);const last=new Date(y,m,0).getDate();return month+"-"+String(Math.min(day,last)).padStart(2,"0")}
-function createRecurringRecords(){const current=localToday().slice(0,7);let changed=false;for(const t of recurring){let month=t.start,count=0;while(month<=current&&(!t.end||month<=t.end)&&count++<240){const category=["Mutuo","Prestito"].includes(t.type)?"Mutuo + prestito":"Condominio",id="rec-"+t.id+"-"+month,dueDate=dueForMonth(month,t.day);const duplicate=records.some(r=>r.id===id||(r.category===category&&r.subtype===t.type&&r.start===month&&r.end===month&&(["Mutuo","Prestito"].includes(t.type)||r.description.toLowerCase()===t.description.toLowerCase()&&Math.abs(r.amount-t.amount)<0.01)));if(!duplicate){records.push({id,category,subtype:t.type,description:t.description,amount:t.amount,start:month,end:month,dueDate,status:category==="Condominio"?"due":(dueDate<localToday()?"paid":"auto"),invoice:""});changed=true}const [y,m]=month.split("-").map(Number);month=(y+(m===12?1:0))+"-"+String(m===12?1:m+1).padStart(2,"0")}}if(changed){localStorage.setItem(KEY,JSON.stringify(records));autoTrackChanges()}}
+function createRecurringRecords(){const current=localToday().slice(0,7);let changed=false;for(const t of recurring){let month=t.start,count=0;while(month<=current&&(!t.end||month<=t.end)&&count++<240){const category=["Mutuo","Prestito"].includes(t.type)?"Mutuo + prestito":"Condominio",id="rec-"+t.id+"-"+month,dueDate=dueForMonth(month,t.day);const duplicate=records.some(r=>r.id===id||(r.category===category&&r.subtype===t.type&&r.start===month&&r.end===month&&(["Mutuo","Prestito"].includes(t.type)||r.description.toLowerCase()===t.description.toLowerCase()&&Math.abs(r.amount-t.amount)<0.01)));if(!duplicate){records.push({id,category,subtype:t.type,description:t.description,amount:t.amount,start:month,end:month,dueDate,status:category==="Condominio"?"due":(dueDate<localToday()?"paid":"auto"),invoice:""});changed=true}const [y,m]=month.split("-").map(Number);month=(y+(m===12?1:0))+"-"+String(m===12?1:m+1).padStart(2,"0")}}if(changed){storage.setItem(KEY,JSON.stringify(records));autoTrackChanges()}}
 function renderRecurring(){const root=document.getElementById("recurringList");root.innerHTML=recurring.length?recurring.map(t=>'<div class="record row"><div><b>'+esc(t.description)+'</b><div class="muted">'+esc(t.type)+' · '+fmt(t.amount)+' · giorno '+t.day+' · dal '+esc(t.start)+(t.end?' al '+esc(t.end):'')+'</div></div><button class="link" onclick="removeRecurring(\''+esc(t.id)+'\')">Disattiva</button></div>').join(""):'<p class="muted">Nessuna rata ricorrente impostata.</p>'}
 function removeRecurring(id){recurring=recurring.filter(t=>t.id!==id);saveRecurring();renderRecurring()}
 recurringForm.addEventListener("submit",e=>{e.preventDefault();const f=new FormData(recurringForm),start=String(f.get("start")),end=String(f.get("end")||""),amount=Number(f.get("amount")),day=Number(f.get("day"));if(end&&end<start){alert("L'ultima rata precede la prima.");return}if(!Number.isFinite(amount)||amount<=0||!Number.isInteger(day)||day<1||day>31)return;recurring.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),type:String(f.get("type")),description:String(f.get("description")).trim(),amount,day,start,end});saveRecurring();createRecurringRecords();render();recurringDialog.close()});
@@ -755,11 +740,11 @@ async function deleteMovement(id){
   if(!remote||!sameRecordFields(local,remote)||!autoSyncBaseline.some(r=>r.id===id&&sameRecordFields(r,remote)))throw Error("Il movimento cloud è diverso dalla versione verificata. Nessun dato cancellato.");
   const row=rows.find(row=>{try{return JSON.parse(row.payload).id===id}catch(e){return false}});
   if(!row?.$id)throw Error("Identificativo cloud mancante");
-  await cloudRequest(syncPath()+"/"+encodeURIComponent(row.$id),"DELETE");
+  await cloudRequest(syncPath()+"/"+row.$id,"DELETE",undefined,row.payload);
   const index=records.findIndex(r=>r.id===id);if(index>=0)records.splice(index,1);
-  localStorage.setItem(KEY,JSON.stringify(records));
+  storage.setItem(KEY,JSON.stringify(records));
   autoSyncBaseline=(autoSyncBaseline||[]).filter(r=>r.id!==id);
-  localStorage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
+  storage.setItem(AUTO_BASE_KEY,JSON.stringify(autoSyncBaseline));
   autoQueueSave(autoQueue().filter(x=>x.id!==id));
   render();syncMessage("Movimento eliminato dal cloud e da questo dispositivo. Gli altri dispositivi si aggiorneranno automaticamente.");
  }catch(e){syncMessage("Eliminazione non eseguita: "+e.message)}
@@ -804,7 +789,7 @@ function ensureDecember2026Loans(){
   const record={id:"annual-"+type.toLowerCase()+"-"+month,category:"Mutuo + prestito",subtype:type,description:previous.description,amount:previous.amount,start:month,end:month,dueDate,status:dueDate<today?"paid":"auto",paymentDate:"",invoice:""};
   if(valid(record)){records.push(record);created.push(record)}
  }
- if(created.length){localStorage.setItem(KEY,JSON.stringify(records));autoTrackChanges();renderHome();renderAnalysis();renderArchive()}
+ if(created.length){storage.setItem(KEY,JSON.stringify(records));autoTrackChanges();renderHome();renderAnalysis();renderArchive()}
 }
 function extendLoanSchedule(){
  const year=Number(localToday().slice(0,4));
@@ -835,7 +820,7 @@ function extendLoanSchedule(){
    }
   }
  }
- if(added.length){localStorage.setItem(KEY,JSON.stringify(records));autoTrackChanges()}
+ if(added.length){storage.setItem(KEY,JSON.stringify(records));autoTrackChanges()}
 }
 function render(){createRecurringRecords();ensureDecember2026Loans();extendLoanSchedule();settleScheduledPayments();updateSelectors();renderHome();renderAnalysis();renderArchive();renderRecurring()}
 function go(id){createRecurringRecords();ensureDecember2026Loans();extendLoanSchedule();settleScheduledPayments();document.querySelectorAll("main section").forEach(x=>x.classList.toggle("hidden",x.id!==id));document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("active",x.dataset.tab===id));window.scrollTo(0,0)}
@@ -848,7 +833,7 @@ function openDocument(){billPdf.value="";pdfStatus.textContent="Seleziona una bo
 function openEntry(){importNotice.classList.add("hidden");importNotice.textContent="";entryForm.reset();entryForm.elements.id.value="";entryForm.elements.start.value=new Date().toISOString().slice(0,7);entryForm.elements.status.value="paid";entryForm.elements.paymentDate.value=localToday();formTitle.textContent="Nuova spesa";subtypeChange();entryDialog.showModal()}
 function editEntry(id){const r=records.find(x=>x.id===id);if(!r)return;if(r.category==="Spesa supermercato"){openSupermarket(id);return;}openEntry();for(const k of ["id","category","description","amount","start","end","status"])entryForm.elements[k].value=r[k];entryForm.elements.invoice.value=r.invoice||"";entryForm.elements.dueDate.value=r.dueDate||"";entryForm.elements.paymentDate.value=r.paymentDate||"";entryForm.elements.consumption.value=r.consumption??"";entryForm.elements.tvFee.value=r.tvFee??"";subtypeChange();if(r.subtype)entrySubtype.value=r.subtype;formTitle.textContent="Modifica spesa"}
 function deleteEntry(id){if(confirm("Eliminare questa spesa?")){records=records.filter(r=>r.id!==id);persist()}}
-function persist(){localStorage.setItem(KEY,JSON.stringify(records));autoTrackChanges();render()}
+function persist(){storage.setItem(KEY,JSON.stringify(records));autoTrackChanges();render()}
 let pendingDuplicate=null;function saveEntryRecord(r){const index=records.findIndex(x=>x.id===r.id);const old=index>=0?records[index]:null;if(r.status==="paid"){if(!r.paymentDate&&old?.status==="paid"&&!old.paymentDate){/* Legacy: keep original allocation until date is supplied */}else if(!r.paymentDate){r.paymentDate=old?.paymentDate||localToday()}}else{delete r.paymentDate}if(index>=0)records[index]=r;else records.push(r);persist();entryDialog.close()}function closeDuplicate(){duplicateDialog.close();pendingDuplicate=null}function saveDuplicateAnyway(){if(!pendingDuplicate)return;const r=pendingDuplicate;pendingDuplicate=null;duplicateDialog.close();saveEntryRecord(r)}
 entryForm.addEventListener("submit",e=>{e.preventDefault();const f=new FormData(entryForm),start=String(f.get("start")),end=String(f.get("end")||start),amount=Number(f.get("amount")),category=String(f.get("category"));if(end<start){alert("Il mese finale non può precedere quello iniziale.");return}if(!Number.isFinite(amount)||amount<0){alert("Importo non valido");return}const id=String(f.get("id")||Date.now()+"-"+Math.random().toString(36).slice(2)),r={id,category,subtype:SUB[category]?String(f.get("subtype")):"",description:String(f.get("description")).trim(),amount,start,end,status:String(f.get("status")),invoice:String(f.get("invoice")||"").trim(),dueDate:String(f.get("dueDate")||""),paymentDate:String(f.get("paymentDate")||"")};if(String(f.get("consumption")).trim()!=="")r.consumption=Number(f.get("consumption"));if(category==="Corrente"&&String(f.get("tvFee")).trim()!=="")r.tvFee=Number(f.get("tvFee"));if(r.status==="paid"&&r.paymentDate&&r.paymentDate>localToday()){alert("La data di pagamento non può essere futura.");return}if(!valid(r)){alert("Controlla i dati inseriti.");return}const duplicates=records.filter(x=>x.id!==id&&((r.invoice&&x.invoice&&x.invoice.toUpperCase()===r.invoice.toUpperCase())||(x.category===r.category&&x.start===r.start&&x.end===r.end&&Math.abs(x.amount-r.amount)<0.01)));if(duplicates.length){pendingDuplicate=r;duplicateDetails.innerHTML=duplicates.slice(0,3).map(x=>"<p><b>"+esc(x.description)+"</b> · "+fmt(x.amount)+"<span class=\"muted\" style=\"display:block\">"+esc(x.start)+(x.invoice?" · Fattura "+esc(x.invoice):"")+"</span></p>").join("");duplicateDialog.showModal();return}saveEntryRecord(r)});
 
@@ -967,7 +952,7 @@ document.getElementById("historyFile").addEventListener("change",async e=>{const
 document.getElementById("historyConfirm").addEventListener("click",()=>{if(!pendingHistory)return;const data=pendingHistory;let added=0;for(const r of data.records){if(records.some(x=>sameHistoricalRecord(x,r)))continue;records.push(r);added++}let plansAdded=0;for(const p of data.plans||[]){if(!["Mutuo","Prestito"].includes(p.type)||!Number.isFinite(p.amount)||!p.start)continue;if(recurring.some(x=>x.type===p.type&&x.description.toLowerCase()===p.description.toLowerCase()))continue;recurring.push({...p,id:"histplan-"+p.type.toLowerCase()});plansAdded++}if(plansAdded)saveRecurring();pendingHistory=null;historyDialog.close();persist();historyStatus.textContent=added+" movimenti aggiunti; "+plansAdded+" piani ricorrenti configurati. Nessun dato esistente sovrascritto."});
 importFile.addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!Array.isArray(data.records)||!data.records.every(valid))throw Error("Formato non valido");if(!confirm("Sostituire tutte le spese locali con il backup selezionato?"))return;records=data.records;persist();alert("Backup importato")}catch(err){alert("Impossibile importare: "+err.message)}finally{e.target.value=""}});
 for(const id of yearSelectIds)document.getElementById(id).addEventListener("change",()=>{if(id==="homeYear")renderHome();else if(id==="analysisYear")renderAnalysis();else renderArchive()});
-analysisCat.addEventListener("change",()=>{document.getElementById("analysisSubtype").value="all";renderAnalysis()});document.getElementById("analysisSubtype").addEventListener("change",renderAnalysis);archiveCat.addEventListener("change",renderArchive);render();
+analysisCat.addEventListener("change",()=>{document.getElementById("analysisSubtype").value="all";renderAnalysis()});document.getElementById("analysisSubtype").addEventListener("change",renderAnalysis);archiveCat.addEventListener("change",renderArchive);render();cloudCheck();
 </script><style id="heimora-update-style">
 #heimoraUpdate{position:fixed;z-index:100;bottom:calc(88px + env(safe-area-inset-bottom));left:16px;right:16px;max-width:520px;margin:auto;background:#075e56;color:white;border-radius:16px;padding:14px 16px;box-shadow:0 10px 30px #102e2a55;display:none;align-items:center;gap:12px;font:600 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 #heimoraUpdate button{border:0;border-radius:10px;padding:10px 14px;background:#fff;color:#075e56;font-weight:800;white-space:nowrap}
@@ -975,7 +960,7 @@ analysisCat.addEventListener("change",()=>{document.getElementById("analysisSubt
 <div id="heimoraUpdate" role="status"><span>È disponibile una nuova versione di HEIMORA.</span><button id="heimoraUpdateButton" type="button">Aggiorna</button></div>
 <script>
 (function(){
- const installedVersion=document.querySelector('meta[name="heimora-version"]')?.content||"2026.11.20.2";
+ const installedVersion=document.querySelector('meta[name="heimora-version"]')?.content||"2026.11.21.1-firebase-preview";
  const infoVersion=document.getElementById("heimoraInfoVersion");if(infoVersion)infoVersion.textContent=installedVersion;
  let pending=false;
  const banner=document.getElementById("heimoraUpdate");
