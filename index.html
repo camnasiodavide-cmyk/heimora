@@ -761,7 +761,7 @@ function archiveMovementRow(r){
 }
 function renderArchive(){
  const y=archiveYear.value,cat=archiveCat.value,status=document.getElementById("archiveStatus").value,q=document.getElementById("archiveSearch").value.trim().toLocaleLowerCase("it");
- const items=records.filter(r=>(months(r).some(m=>m.startsWith(y))||(r.paymentDate?.startsWith(y)))&&(cat==="all"||r.category===cat||(cat==="TV e Internet"&&r.tvFee>0))&&(status==="all"||r.status===status)&&(!q||[r.description,r.category,r.subtype,r.invoice,r.start,r.end,r.dueDate].some(v=>String(v||"").toLocaleLowerCase("it").includes(q)))).sort((a,b)=>(b.dueDate||b.start).localeCompare(a.dueDate||a.start)||b.start.localeCompare(a.start));
+ const movementDate=r=>r.paymentDate||r.dueDate||r.end||r.start,items=records.filter(r=>(months(r).some(m=>m.startsWith(y))||(r.paymentDate?.startsWith(y)))&&(cat==="all"||r.category===cat||(cat==="TV e Internet"&&r.tvFee>0))&&(status==="all"||r.status===status)&&(!q||[r.description,r.category,r.subtype,r.invoice,r.start,r.end,r.dueDate].some(v=>String(v||"").toLocaleLowerCase("it").includes(q)))).sort((a,b)=>movementDate(b).localeCompare(movementDate(a))||b.start.localeCompare(a.start));
  document.getElementById("archiveSummary").textContent=items.length+" movimenti trovati · Totale "+fmt(items.reduce((sum,r)=>sum+Number(r.amount||0),0))+" (importi integrali dei documenti, anche se coprono più mesi)";
  archiveList.innerHTML=items.length?items.map(archiveMovementRow).join(""):'<div class="empty">Nessun movimento per questi filtri</div>';
 }
