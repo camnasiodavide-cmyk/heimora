@@ -1,5 +1,5 @@
 // Cache only the public application shell. Account and financial responses go directly to Appwrite.
-const CACHE_NAME="heimora-shell-2026.11.21.1-firebase-preview";
+const CACHE_NAME="heimora-shell-2026.11.22.2";
 const SHELL=new URL("./index.html",self.registration.scope).href;
 const SCOPE=new URL(self.registration.scope);
 self.addEventListener("install",event=>{
