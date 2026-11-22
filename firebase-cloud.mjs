@@ -39,7 +39,7 @@ export function createFirebaseCloud(auth, db, authSdk, firestore, onMovementsCha
      return;
     }
     movementRows = asRows(snapshot);
-    onMovementsChanged();
+    onMovementsChanged({receivedAt: Date.now()});
    }, error => {
     clearListener();
     listenerError = error;

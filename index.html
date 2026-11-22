@@ -37,7 +37,7 @@ function firebaseCloud(){
   firebaseConnection=import("./firebase-cloud.mjs")
    .then(module=>module.connectFirebase(()=>{
     if(autoSyncRunning)autoSyncRefresh=true;
-    else autoSyncSoon();
+    else autoSyncSoon(true);
    })).catch(error=>{firebaseConnection=undefined;throw error});
  }
  return firebaseConnection;
@@ -256,7 +256,7 @@ function autoTrackChanges(){
 let autoSyncBaseline=null,autoSyncLastError="";
 let autoSyncFailures=0,autoSyncRetryAt=0;
 function deferAutoSync(){autoSyncRetryAt=Date.now()+Math.min(300000,15000*2**Math.min(++autoSyncFailures,5))}
-function autoSyncSoon(){if(autoSyncReady&&navigator.onLine&&Date.now()>=autoSyncRetryAt&&!autoSyncRunning&&!autoSyncPending){autoSyncPending=true;setTimeout(()=>{autoSyncPending=false;autoSyncNow()},1300)}}
+function autoSyncSoon(immediate=false){if(autoSyncReady&&navigator.onLine&&Date.now()>=autoSyncRetryAt&&!autoSyncRunning&&!autoSyncPending){autoSyncPending=true;setTimeout(()=>{autoSyncPending=false;autoSyncNow()},immediate?0:1300)}}
 async function autoSyncNow(){
  if(!autoSyncReady||!navigator.onLine||Date.now()<autoSyncRetryAt||autoSyncRunning||document.body.classList.contains("auth-locked")||syncBusy)return;
  autoSyncRunning=true;
