@@ -28,6 +28,7 @@ service cloud.firestore {
 
   match /privateConfig/{id} {
    allow get: if isMember() && id == 'rate-annuali-2027';
+   allow create: if isMember() && id == 'rate-annuali-2027' && isPayload();
   }
  }
 }
