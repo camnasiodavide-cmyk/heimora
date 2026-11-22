@@ -959,7 +959,7 @@ billPdf.addEventListener("change",async event=>{
  }catch(error){pdfStatus.textContent="Lettura non riuscita: "+error.message+" Puoi registrare la spesa manualmente."}
  finally{event.target.value=""}
 });
-function exportData(){const blob=new Blob([JSON.stringify({app:"HEIMORA",version:1,exportedAt:new Date().toISOString(),records},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="heimora-backup-"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportData(){const backup={app:"HEIMORA",kind:"firebase-migration-v1",version:2,exportedAt:new Date().toISOString(),records,recurring,condoStatements:condoCloudLocal(),loanAnnualConfig:loanAnnualConfig?{year:2027,annualCents:loanAnnualConfig}:null},blob=new Blob([JSON.stringify(backup,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="heimora-migrazione-firebase-"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 
 let pendingHistory=null;
 function sameHistoricalRecord(a,b){if(a.id===b.id)return true;if(a.invoice&&b.invoice&&a.category===b.category&&a.invoice.toUpperCase()===b.invoice.toUpperCase())return true;if(a.category==="Condominio"&&b.category==="Condominio"&&a.dueDate&&a.dueDate===b.dueDate&&a.subtype===b.subtype&&Math.abs(a.amount-b.amount)<0.01)return true;if(a.category===b.category&&a.subtype===b.subtype&&a.start===b.start&&a.end===b.end&&Math.abs(a.amount-b.amount)<0.01&&a.description===b.description)return true;return false}
