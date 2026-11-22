@@ -736,7 +736,7 @@ async function deleteMovement(id){
  if(!local)return;
  if(!autoSyncReady||!Array.isArray(autoSyncBaseline)){syncMessage("Eliminazione disponibile solo con cloud collegato.");return}
  if(autoQueue().some(x=>x.id===id)){syncMessage("Movimento ancora in attesa di sincronizzazione. Attendi che sia presente nel cloud.");return}
- if(!await askSyncConfirmation("Eliminare definitivamente «"+local.description+"» ("+fmt(local.amount)+")? Il movimento verrà eliminato anche dagli altri dispositivi. Questa operazione non è annullabile."))return;
+ if(!confirm("Eliminare definitivamente «"+local.description+"» ("+fmt(local.amount)+")? Il movimento verrà eliminato anche dagli altri dispositivi. Questa operazione non è annullabile."))return;
  syncBusy=true;syncButtons();syncMessage("Eliminazione del movimento dal cloud in corso…");
  try{
   const rows=await syncRead(),cloud=syncParse(rows),remote=cloud.find(r=>r.id===id);
