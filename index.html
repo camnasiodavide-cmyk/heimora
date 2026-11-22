@@ -18,6 +18,7 @@ main{padding-bottom:calc(125px + env(safe-area-inset-bottom))}
 <div class="card"><h2>Sincronizzazione</h2><p class="note">I movimenti vengono sincronizzati automaticamente tra i dispositivi autorizzati.</p><div id="syncStatus" class="import-notice" role="status">Controllo sincronizzazione in corso…</div><button class="secondary" type="button" id="syncInspect">Controlla cloud</button><div id="syncAudit" class="import-notice" role="status" style="display:none;margin-top:12px;white-space:pre-line"></div><details style="margin-top:16px"><summary style="cursor:pointer;font-weight:650;color:#075e56">Strumenti avanzati di sincronizzazione</summary><p class="note">Usa questi strumenti solo per recupero o diagnosi. Non importare o caricare interi archivi per risolvere conflitti senza un backup.</p><div class="actions"><button class="secondary" type="button" id="syncResolvePayment" style="display:none">Risolvi pagamento in conflitto</button><button class="secondary" type="button" id="syncInitialize" style="display:none">Collega questo dispositivo</button><button class="secondary" type="button" id="syncDownload" disabled>Importa dal cloud</button><button class="secondary" type="button" id="syncUpload" disabled>Carica archivio locale nel cloud</button></div></details></div>
 <div class="card"><h2>Backup e recupero dati</h2><p class="note">Esporta una copia di sicurezza dell'archivio. Le importazioni sono operazioni straordinarie: controlla sempre il contenuto prima di procedere.</p><button class="secondary" onclick="exportData()">Esporta backup JSON</button><details style="margin-top:16px"><summary style="cursor:pointer;font-weight:650;color:#075e56">Strumenti di ripristino e importazione</summary><div class="actions"><button class="secondary" onclick="document.getElementById('importFile').click()">Importa JSON</button><button class="secondary" onclick="document.getElementById('historyFile').click()">Unisci archivio storico</button></div><input class="hidden" type="file" id="importFile" accept=".json,application/json"><input class="hidden" type="file" id="historyFile" accept=".json,application/json"><p class="note" id="historyStatus"></p></details></div>
 <div class="card"><h2>Informazioni</h2><p class="muted">HEIMORA · Le spese di casa. Archivio sincronizzato tramite cloud per gli account autorizzati. I PDF vengono letti per estrarre i dati, ma non sono conservati nell'app.</p><p class="note">Versione: <span id="heimoraInfoVersion"></span> · Gli aggiornamenti sono disponibili direttamente dall'app.</p></div>
+<div class="card"><h2>Connessione cloud</h2><p class="muted">HEIMORA usa Firebase per autenticazione e sincronizzazione dell’archivio condiviso.</p></div>
 <div class="hidden" aria-hidden="true"><input type="file" id="mortgageConfigFile" accept=".json,application/json"><div id="mortgageConfigStatus"></div><div id="recurringList"></div></div>
 </section>
 </main>
@@ -198,7 +199,7 @@ async function syncUploadLocal(){
   if(!confirm("Backup JSON già esportato? Nel cloud ci sono "+fresh.length+" movimenti. Caricare solo i "+missing.length+" mancanti, senza modificare quelli esistenti?")){syncCloudRows=fresh;syncMessage("Caricamento annullato. Cloud: "+fresh.length+" movimenti; mancanti: "+missing.length+".");return}
   for(const record of missing){
    // Il piano Free può limitare le scritture: pause tra richieste e stop pulito a HTTP 429.
-   await new Promise(resolve=>setTimeout(resolve,1100));
+   await new Promise(resolve=>setTimeout(resolve,100));
    const rowId=await syncRowId(record.id);
    await cloudRequest(syncPath(),"POST",{rowId,data:{payload:JSON.stringify(record)}});
    completed++;
@@ -293,7 +294,7 @@ async function autoSyncNow(){
    syncMessage("Dispositivo collegato automaticamente: "+cloud.length+" movimenti cloud. Copia precedente conservata sul dispositivo.");
    return;
   }
-  let retryNeeded=false;
+  let retryNeeded=false,uploaded=0;
   const confirmedIds=new Set();
   for(const [index,item] of queue.entries()){
    const remote=byId.get(item.id);
@@ -305,6 +306,8 @@ async function autoSyncNow(){
     await cloudRequest(syncPath()+(remote?"/"+rowId:""),remote?"PATCH":"POST",{rowId,data:{payload:JSON.stringify(item.record)}},row?.payload);
     byId.set(item.id,item.record);
     confirmedIds.add(item.id);
+    uploaded++;
+    if(uploaded%10===0)syncMessage("Migrazione Firebase: "+uploaded+" movimenti inviati. Mantieni aperta questa pagina.");
    }catch(e){
     remaining.push(item);
     autoSyncLastError="Salvataggio cloud non riuscito: "+cloudErrorMessage(e);
@@ -315,7 +318,7 @@ async function autoSyncNow(){
      break;
     }
    }
-   await new Promise(resolve=>setTimeout(resolve,1100));
+   await new Promise(resolve=>setTimeout(resolve,100));
   }
   // Le modifiche avvenute mentre la richiesta cloud era in corso non devono sparire.
   const latestQueue=autoQueue(),remainingById=new Map(remaining.map(item=>[item.id,item]));
